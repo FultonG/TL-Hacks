@@ -17,6 +17,7 @@ margin: 0;
 export const Title = styled.h1`
   font-size: 80px;
   color: #FFFFFF;
+  margin: 10px;
 `;
 
 export const Description = styled(Text)`

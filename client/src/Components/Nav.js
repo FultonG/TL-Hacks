@@ -1,5 +1,5 @@
 import Container from './Container';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import Logo from '../svg/TL-Logo.svg';
 import Button from './Button';
@@ -17,6 +17,7 @@ const Brand = styled.img`
 `;
 
 const Nav = () => {
+  let history = useHistory();
   return (
     <Container align="center" height="10%" padding="15px 0px 0px 15px">
       <Brand src={Logo}></Brand>
@@ -27,7 +28,7 @@ const Nav = () => {
       </Container>
       <Container width="25%" justify="space-evenly" align="center">
         <Button border="1px solid white" background="#030F23">Login</Button>
-        <Button>Sign up</Button>
+        <Button onClick={() => history.push('/signup')}>Sign up</Button>
       </Container>
     </Container>
   )
