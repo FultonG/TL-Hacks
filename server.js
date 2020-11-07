@@ -1,9 +1,11 @@
 const express = require('express');
-require('dotenv').config();
+const dotenv = require('dotenv');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const auth = require('./middleware/auth');
 const app = express();
+
+dotenv.config();
 
 app.use(cors());
 app.use(bodyParser.urlencoded({
@@ -11,7 +13,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-// app.use('/api', require('./api'));
+app.use('/api', require('./api'));
 
 app.post('/', auth.checkToken, (req, res) => res.json({
   message: 'Posting!',
