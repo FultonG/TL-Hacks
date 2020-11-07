@@ -17,8 +17,6 @@ const Metrics = () => {
     { soloKillsId: "28e7377b-614b-4e59-b2ad-242fdc5ab309" },
     { teamKillsId: "9483e76a-46da-4f26-b9d4-ba09a1df4b2d" },
   ];
-  let chartId = "";
-  const listItems = ChartsId.map(chartId);
 
   let chartRef = createRef();
   useEffect(() => {
