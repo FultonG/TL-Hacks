@@ -3,6 +3,7 @@ import Container from "../Components/Container";
 import { Title, Text } from "../Components/Text";
 import Team from '../svg/TL.svg';
 
+
 const Home = () => {
   return (
     <Container align="center" direction="column" height="90%">

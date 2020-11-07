@@ -10,6 +10,7 @@ import Signup from "./Pages/Signup";
 import { useEffect, useState } from "react";
 import { AppStateProvider } from "./Context/AppContext";
 import Account from "./Pages/Account";
+import Events from "./Pages/Events";
 
 const App = () => {
   return (
@@ -28,6 +29,9 @@ const App = () => {
           </Route>
           <Route path="/account">
             <Account />
+          </Route>
+          <Route path="/events">
+            <Events />
           </Route>
         </Switch>
       </Router>
