@@ -1,7 +1,8 @@
 import Container from './Container';
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-
+import Logo from '../svg/TL-Logo.svg';
+import Button from './Button';
 const StyledNavLink = styled(NavLink)`
   color: white;
   text-decoration: none; /* no underline */
@@ -9,12 +10,25 @@ const StyledNavLink = styled(NavLink)`
     text-decoration: underline;
   }
 `;
+
+const Brand = styled.img`
+  width: 75px;
+  height: 75px;
+`;
+
 const Nav = () => {
   return (
-    <Container height="10%" justify="space-evenly" align="center">
-      {NavLinks.map(link => (
-        <StyledNavLink to={link.link} exact activeClassName="active">{link.title}</StyledNavLink>
-      ))}
+    <Container align="center" height="10%" padding="15px 0px 0px 15px">
+      <Brand src={Logo}></Brand>
+      <Container justify="space-evenly" align="center" width="70%">
+        {NavLinks.map(link => (
+          <StyledNavLink to={link.link} exact activeClassName="active">{link.title}</StyledNavLink>
+        ))}
+      </Container>
+      <Container width="25%" justify="space-evenly" align="center">
+        <Button border="1px solid white" background="#030F23">Login</Button>
+        <Button>Sign up</Button>
+      </Container>
     </Container>
   )
 }

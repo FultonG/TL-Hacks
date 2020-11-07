@@ -16,7 +16,7 @@ const Home = () => {
           <Text>Placeholder</Text>
         </Container>
         <Container width="30%" direction="column" justify="center" align="center">
-          <Card height="80%" margin="10px" radius="25px" background={`url(${Team}) no-repeat center center`} hover cursor="pointer"></Card>
+          <Card height="80%" margin="10px" radius="25px" background={`url(${Team}) no-repeat`} hover cursor="pointer"></Card>
           <Text>Placeholder</Text>
         </Container>
         <Container width="30%" direction="column" justify="center" align="center">
