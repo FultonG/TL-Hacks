@@ -7,6 +7,7 @@ import Nav from "./Components/Nav";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
+import Metrics from "./Pages/Metrics"
 
 const App = () => {
   return (
@@ -21,6 +22,9 @@ const App = () => {
         </Route>
         <Route path="/login">
           <Login/>
+        </Route>
+        <Route path = "/Metrics">
+          <Metrics></Metrics>
         </Route>
       </Switch>
     </Router>
