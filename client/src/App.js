@@ -10,7 +10,7 @@ import Signup from "./Pages/Signup";
 import { AppStateProvider } from "./Context/AppContext";
 import Account from "./Pages/Account";
 import Metrics from "./Pages/Metrics";
-
+import Events from "./Pages/Events";
 const App = () => {
   return (
     <AppStateProvider>
@@ -32,6 +32,9 @@ const App = () => {
           <Route path = "/Metrics">
           <Metrics></Metrics>
         </Route>
+          <Route path="/events">
+            <Events />
+          </Route>
         </Switch>
       </Router>
     </AppStateProvider>

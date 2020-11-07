@@ -10,7 +10,7 @@ const user = {
       const hash = await bcrypt.hash(data.password, 10);
       let res = await collection.findOne({ username: data.username });
       if (res === null) {
-        await collection.insertOne({ username: data.username, password: hash });
+        await collection.insertOne({ ...data, password: hash });
         return { status: 200, data: 'Account Created Successfully' };
       }
       return { status: 409, data: 'Username already in use' };

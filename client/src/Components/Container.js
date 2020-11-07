@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Container = styled.div(({width = '100%', height = '100%', padding = '0', wrap = "nowrap", direction = "row", justify = "flex-start", margin = "0", align="normal", overflow}) => `
+const Container = styled.div(({width = '100%', height = '100%', padding = '0', wrap = "nowrap", direction = "row", justify = "flex-start", margin = "0", align="normal", overflow = false}) => `
   display: flex;
   width: ${width};
   height: ${height};

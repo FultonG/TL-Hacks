@@ -11,7 +11,8 @@ import {useAppReducer, useAppState} from '../Context/AppContext';
 
 const defaultUser = {
   username: '',
-  password: ''
+  password: '',
+  summonerName: ''
 };
 
 const Signup = () => {
@@ -48,11 +49,12 @@ const Signup = () => {
   }
   return (
     <Container align="center" justify="center" height="90%">
-      <Card height="75%" width="75%" background={`url(${Background})`} direction="column">
+      <Card height="90%" width="75%" background={`url(${Background})`} direction="column">
         <Title>Register</Title>
         <Container as="form" width="40%" height="40%" justify="space-evenly" align="center" direction="column" onSubmit={handleRegister}>
           <Input placeholder="Username" value={data.username} onChange={(e) => handleDataChange(e.currentTarget.value, 'username')}></Input>
           <Input placeholder="Password" type="password" value={data.password} onChange={(e) => handleDataChange(e.currentTarget.value, 'password')}></Input>
+          <Input placeholder="Summoner Name"  value={data.summonerName} onChange={(e) => handleDataChange(e.currentTarget.value, 'summonerName')}></Input>
           <Text as={Link} to="/login">Already have an Account? Log in</Text>
           {error !== null && <p style={{color: 'red'}}>{error}</p>}
           <Button border="1px solid white" background="#030F23" type="submit">Sign up</Button>
