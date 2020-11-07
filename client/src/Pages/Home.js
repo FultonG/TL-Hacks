@@ -5,7 +5,7 @@ import Team from '../svg/TL.svg';
 
 const Home = () => {
   return (
-    <Container align="center" direction="column">
+    <Container align="center" direction="column" height="90%">
       <Container justify="center" align="center" direction="column" height="60%">
         <Title>Esports Training Camp XD</Title>
         <Text>Insert Slogan Here ???</Text>
