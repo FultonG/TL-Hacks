@@ -1,0 +1,12 @@
+html, body, #root{
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #000B1D 0%, rgba(1, 18, 62, 0.87) 61.46%, rgba(0, 15, 52, 0.32) 100%);
+}
+
+body {
+  margin: 0;
+  font-family: 'BebasNeueRegular';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
