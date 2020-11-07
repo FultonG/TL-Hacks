@@ -15,10 +15,6 @@ app.use(bodyParser.json());
 
 app.use('/api', require('./api'));
 
-app.post('/', auth.checkToken, (req, res) => res.json({
-  message: 'Posting!',
-}));
-
 app.listen(8080, () => {
   console.log('Server running');
 });
