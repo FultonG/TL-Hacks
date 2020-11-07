@@ -5,7 +5,7 @@ let initialState = {};
 let user = localStorage.getItem('user');
 
 if (user !== null) {
-  initialState.user = user;
+  initialState.user = JSON.parse(user);
 }
 
 export function useAppState() {
