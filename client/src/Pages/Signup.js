@@ -6,6 +6,8 @@ import Container from '../Components/Container';
 import Input from '../Components/Input';
 import { Title } from '../Components/Text';
 import Background from '../svg/Signup-Background.svg';
+import {useHistory} from 'react-router-dom';
+import {useAppReducer, useAppState} from '../Context/AppContext';
 
 const defaultUser = {
   username: '',
@@ -13,19 +15,26 @@ const defaultUser = {
 };
 
 const Signup = () => {
-  const [user, setUser] = useState(defaultUser);
+  const [data, setData] = useState(defaultUser);
   const [error, setError] = useState(null);
-  const handleUserChange = (val, attr) => {
+  let history = useHistory();
+  let {user} = useAppState();
+  let dispatch = useAppReducer();
+  if(user){
+    history.push('/account');
+  }
+  const handleDataChange = (val, attr) => {
     if(error !== null){
       setError(null);
     }
-    setUser(prev => ({ ...prev, [attr]: val }));
+    setData(prev => ({ ...prev, [attr]: val }));
   }
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      let res = await API.registerUser(user);
-      console.log(res.data);
+      await API.registerUser(data);
+      let res = await API.authenticateUser(data);
+      dispatch({type: 'Update User', payload: {user: res.data}});
     } catch (e) {
       switch (e.response.status) {
         case 409:
@@ -42,8 +51,8 @@ const Signup = () => {
       <Card height="75%" width="75%" background={`url(${Background})`} direction="column">
         <Title>Register</Title>
         <Container as="form" width="40%" height="40%" justify="space-evenly" align="center" direction="column" onSubmit={handleRegister}>
-          <Input placeholder="Username" value={user.username} onChange={(e) => handleUserChange(e.currentTarget.value, 'username')}></Input>
-          <Input placeholder="Password" type="password" value={user.password} onChange={(e) => handleUserChange(e.currentTarget.value, 'password')}></Input>
+          <Input placeholder="Username" value={data.username} onChange={(e) => handleDataChange(e.currentTarget.value, 'username')}></Input>
+          <Input placeholder="Password" type="password" value={data.password} onChange={(e) => handleDataChange(e.currentTarget.value, 'password')}></Input>
           {error !== null && <p style={{color: 'red'}}>{error}</p>}
           <Button border="1px solid white" background="#030F23" type="submit">Sign up</Button>
         </Container>
