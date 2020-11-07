@@ -10,6 +10,7 @@ import Signup from "./Pages/Signup";
 import { useEffect, useState } from "react";
 import { AppStateProvider } from "./Context/AppContext";
 import Account from "./Pages/Account";
+import Metrics from "./Pages/Metrics";
 
 const App = () => {
   return (
@@ -29,6 +30,9 @@ const App = () => {
           <Route path="/account">
             <Account />
           </Route>
+          <Route path = "/Metrics">
+          <Metrics></Metrics>
+        </Route>
         </Switch>
       </Router>
     </AppStateProvider>
