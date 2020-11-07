@@ -12,7 +12,7 @@ const defaultUser = {
   password: ''
 };
 
-const Signup = () => {
+const Login = () => {
   const [user, setUser] = useState(defaultUser);
   const [error, setError] = useState(null);
   const handleUserChange = (val, attr) => {
@@ -24,11 +24,12 @@ const Signup = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      let res = await API.registerUser(user);
+      let res = await API.authenticateUser(user);
       console.log(res.data);
     } catch (e) {
       switch (e.response.status) {
-        case 409:
+        case 404:
+        case 401:
           setError(e.response.data);
           break;
         default:
@@ -40,16 +41,16 @@ const Signup = () => {
   return (
     <Container align="center" justify="center" height="90%">
       <Card height="75%" width="75%" background={`url(${Background})`} direction="column">
-        <Title>Register</Title>
+        <Title>Login</Title>
         <Container as="form" width="40%" height="40%" justify="space-evenly" align="center" direction="column" onSubmit={handleRegister}>
           <Input placeholder="Username" value={user.username} onChange={(e) => handleUserChange(e.currentTarget.value, 'username')}></Input>
           <Input placeholder="Password" type="password" value={user.password} onChange={(e) => handleUserChange(e.currentTarget.value, 'password')}></Input>
           {error !== null && <p style={{color: 'red'}}>{error}</p>}
-          <Button border="1px solid white" background="#030F23" type="submit">Sign up</Button>
+          <Button border="1px solid white" background="#030F23" type="submit">Log in</Button>
         </Container>
       </Card>
     </Container>
   )
 }
 
-export default Signup;
+export default Login;

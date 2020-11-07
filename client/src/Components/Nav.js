@@ -27,7 +27,7 @@ const Nav = () => {
         ))}
       </Container>
       <Container width="25%" justify="space-evenly" align="center">
-        <Button border="1px solid white" background="#030F23">Login</Button>
+        <Button onClick={() => history.push('/login')} border="1px solid white" background="#030F23">Login</Button>
         <Button onClick={() => history.push('/signup')}>Sign up</Button>
       </Container>
     </Container>

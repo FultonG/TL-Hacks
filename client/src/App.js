@@ -5,6 +5,7 @@ import {
 } from "react-router-dom";
 import Nav from "./Components/Nav";
 import Home from "./Pages/Home";
+import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
 
 const App = () => {
@@ -17,6 +18,9 @@ const App = () => {
         </Route>
         <Route path="/signup">
           <Signup></Signup>
+        </Route>
+        <Route path="/login">
+          <Login/>
         </Route>
       </Switch>
     </Router>

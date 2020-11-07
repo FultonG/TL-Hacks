@@ -10,7 +10,7 @@ const Home = () => {
         <Title>Esports Training Camp XD</Title>
         <Text>Insert Slogan Here ???</Text>
       </Container>
-      <Container justify="space-evenly" align="center" height="40%">
+      <Container justify="space-evenly" align="center" height="35%">
         <Container width="30%" direction="column" justify="center" align="center">
           <Card height="80%" margin="10px" radius="25px" hover cursor="pointer"></Card>
           <Text>Placeholder</Text>

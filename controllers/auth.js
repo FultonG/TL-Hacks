@@ -27,7 +27,7 @@ const user = {
         const success = await bcrypt.compare(data.password, account.password);
         if (success) {
           const { password, ...rest } = account;
-          const token = jwt.sign({ username: data.username }, process.env.JWT_SECRET, { expiresIn: '24h' });
+          const token = jwt.sign({ username: data.username }, process.env.JWT_SECRET, { expiresIn: '1h' });
           return { status: 200, data: { token, ...rest } };
         }
         return { status: 401, data: 'Invalid Credentials' };
