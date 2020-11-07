@@ -7,11 +7,10 @@ import Nav from "./Components/Nav";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
-import { useEffect, useState } from "react";
 import { AppStateProvider } from "./Context/AppContext";
 import Account from "./Pages/Account";
+import Metrics from "./Pages/Metrics";
 import Events from "./Pages/Events";
-
 const App = () => {
   return (
     <AppStateProvider>
@@ -30,6 +29,9 @@ const App = () => {
           <Route path="/account">
             <Account />
           </Route>
+          <Route path = "/Metrics">
+          <Metrics></Metrics>
+        </Route>
           <Route path="/events">
             <Events />
           </Route>
