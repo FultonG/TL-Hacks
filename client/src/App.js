@@ -7,8 +7,6 @@ import Nav from "./Components/Nav";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
-import { useEffect, useState } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { AppStateProvider } from "./Context/AppContext";
 import Account from "./Pages/Account";
 import Metrics from "./Pages/Metrics";
