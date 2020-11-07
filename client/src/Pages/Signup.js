@@ -4,9 +4,9 @@ import Button from '../Components/Button';
 import Card from '../Components/Card';
 import Container from '../Components/Container';
 import Input from '../Components/Input';
-import { Title } from '../Components/Text';
+import { Title, Text } from '../Components/Text';
 import Background from '../svg/Signup-Background.svg';
-import {useHistory} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 import {useAppReducer, useAppState} from '../Context/AppContext';
 
 const defaultUser = {
@@ -53,6 +53,7 @@ const Signup = () => {
         <Container as="form" width="40%" height="40%" justify="space-evenly" align="center" direction="column" onSubmit={handleRegister}>
           <Input placeholder="Username" value={data.username} onChange={(e) => handleDataChange(e.currentTarget.value, 'username')}></Input>
           <Input placeholder="Password" type="password" value={data.password} onChange={(e) => handleDataChange(e.currentTarget.value, 'password')}></Input>
+          <Text as={Link} to="/login">Already have an Account? Log in</Text>
           {error !== null && <p style={{color: 'red'}}>{error}</p>}
           <Button border="1px solid white" background="#030F23" type="submit">Sign up</Button>
         </Container>
