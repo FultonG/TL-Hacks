@@ -5,6 +5,7 @@ import Logo from '../svg/TL-Logo.svg';
 import Button from './Button';
 import { useContext, useEffect } from 'react';
 import { useAppReducer, useAppState, UserContext } from '../Context/AppContext';
+import { Text } from './Text';
 const StyledNavLink = styled(NavLink)`
   font-family: 'Open Sans', sans-serif;
   letter-spacing: 2px;
@@ -37,6 +38,7 @@ const Nav = () => {
       </Container>
       {user ?
         <Container width="25%" justify="space-evenly" align="center">
+          <Text>{user.summonerName}</Text>
           <Button onClick={() => dispatch({type: 'Update User', payload: {user: undefined}})}>Log out</Button>
         </Container>
         :
