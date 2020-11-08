@@ -6,6 +6,7 @@ import Container from '../Components/Container';
 import Card from '../Components/Card';
 import { useAppState, useAppReducer } from "../Context/AppContext";
 import styled from 'styled-components';
+import Button from '../Components/Button';
 
 const ProfileIcon = styled.img`
   border-radius: 10px;
@@ -31,8 +32,17 @@ const Account = () => {
     } catch (e) {
       console.log(e.message);
     }
-
   }
+
+  const handleMatchInfo = async (id) => {
+    try {
+      let res = await API.getMatchInfoById(id, user.token);
+      console.log(res.data);
+    } catch(e) {
+      console.log(e.message);
+    }
+  }
+
   return (
     <Container height="90%">
       <Container align="center" direction="column" padding="10px">
@@ -50,6 +60,7 @@ const Account = () => {
                 <Text style={{ margin: '0px 10px' }}>{new Date(match.timestamp).toDateString()}</Text>
                 <Text style={{ margin: '0px 10px' }}>{findPosition(match.lane, match.role)}</Text>
               </div>
+              <Button onClick={(e) => handleMatchInfo(match.gameId)}>Match Info</Button>
             </Card>
           ))}
         </Container>

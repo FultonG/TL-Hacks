@@ -4,7 +4,7 @@ const API = {
   authenticateUser: (data) => axios.post('/api/auth/login', data),
   getSummonerInfo: (summonerName, token) => axios.post('/api/summoner/info', {summonerName}, { headers: {'x-access-token': token}}),
   getTournamentInfo: () => axios.get('/api/liquidpedia/tournaments'),
-  getMatchInfoById: (id, token) => axios.get('/api/summoner/match', {id},  { headers: {'x-access-token': token}}),
+  getMatchInfoById: (id, token) => axios.post('/api/summoner/match', {id},  { headers: {'x-access-token': token}})
 }
 
 export default API;

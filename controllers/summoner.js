@@ -10,7 +10,7 @@ const summoner = {
       if (res === null) {
         res = await axios.get(`https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${data.summonerName}`, { headers: { 'X-Riot-Token': process.env.RIOT_API_KEY } })
         let { name, ...rest } = res.data;
-        res = await axios.get(`https://na1.api.riotgames.com/lol/match/v4/matchlists/by-account/${rest.accountId}`, { headers: { 'X-Riot-Token': process.env.RIOT_API_KEY } });
+        res = await axios.get(`https://na1.api.riotgames.com/lol/match/v4/matchlists/by-account/${rest.accountId}?beginIndex=5`, { headers: { 'X-Riot-Token': process.env.RIOT_API_KEY } });
         let champions = await axios.get('http://ddragon.leagueoflegends.com/cdn/10.22.1/data/en_US/champion.json');
         let matches = res.data.matches.map(match => ({...match, champion: findChampion(champions.data.data,match.champion)}))
         await collection.insertOne({ ...rest, matches, summonerName: name });
