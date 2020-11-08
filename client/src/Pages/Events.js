@@ -1,8 +1,24 @@
 import Card from "../Components/Card";
 import Container from "../Components/Container";
 import { Title, Text } from "../Components/Text";
+import API from "../API/index";
+import { useEffect } from "react";
 
 const Events = () => {
+
+    // useEffect(() => {
+    //     fetchTournamentInfo();
+    // }, []);
+
+    // const fetchTournamentInfo = async () => {
+    //     try {
+    //         let res = await API.getTournamentInfo();
+    //         console.log(res);
+    //     } catch (e) {
+    //         console.log(e.message);
+    //     }
+    // }
+
     return (
         <>
             <Container direction="column" height= "10%" width="80%"  align="center" padding="0% 0% 0% 20%">
@@ -19,10 +35,11 @@ const Events = () => {
                 padding="2% 4% 2% 4%"
                 background= "#000B1D"
             >
-                <Text>Icon</Text>
-                <Text>League of Legends</Text>
-                <Text>Prizepool</Text>
-                <Text>Date</Text>
+                {/* <Text>{icon}</Text>
+                <Text>{name}</Text>
+                <Text>{prizepool}</Text>
+                <Text>{startdate}</Text>
+                <Text>{enddate}</Text> */}
             </Card>
         </>
     )
