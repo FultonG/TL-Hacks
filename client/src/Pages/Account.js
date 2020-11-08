@@ -21,6 +21,7 @@ const Account = () => {
       fetchSummonerInfo(user);
     }
   }, []);
+  console.log(user);
 
   const fetchSummonerInfo = async (user) => {
     try {

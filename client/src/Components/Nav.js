@@ -38,7 +38,7 @@ const Nav = () => {
       </Container>
       {user ?
         <Container width="25%" justify="space-evenly" align="center">
-          <Text>{user.summonerName}</Text>
+          <Text>{user.username}</Text>
           <Button onClick={() => dispatch({type: 'Update User', payload: {user: undefined}})}>Log out</Button>
         </Container>
         :

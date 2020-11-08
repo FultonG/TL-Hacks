@@ -11,4 +11,9 @@ router.post('/matches', async (req, res) => {
   res.status(status).send(data);
 });
 
+router.post('/match', async (req, res) => {
+  const {status, data} = await summoner.getMatchesInfoById(req.body);
+  res.status(status).send(data);
+})
+
 module.exports = router;
