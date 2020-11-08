@@ -1,7 +1,7 @@
 import Container from "../Components/Container";
 import React, { createRef, useEffect } from "react";
 import ChartsEmbedSDK from "@mongodb-js/charts-embed-dom";
-import Card from '../Components/Card';
+import Card from "../Components/Card";
 const Metrics = () => {
   useEffect(() => {
     renderCharts().catch((e) => window.alert(e.message));
@@ -15,7 +15,7 @@ const Metrics = () => {
         chartId: chart.id,
       });
       await Chart.render(chart.ref.current);
-    })
+    });
   }
   return (
     <Container
@@ -25,7 +25,7 @@ const Metrics = () => {
       wrap="wrap"
       overflow
     >
-      {Charts.map(chart => (
+      {Charts.map((chart) => (
         <Card id={chart.id} ref={chart.ref} height="50%"></Card>
       ))}
     </Container>
@@ -44,6 +44,7 @@ const Charts = [
   { id: "ffaf082b-19c4-4e80-8e90-943a4ccf4505", ref: createRef() },
   { id: "28e7377b-614b-4e59-b2ad-242fdc5ab309", ref: createRef() },
   { id: "9483e76a-46da-4f26-b9d4-ba09a1df4b2d", ref: createRef() },
+  { id: "1eddd769-220d-4663-a3f0-389c8e1f63ce", ref: createRef() },
 ];
 
 export default Metrics;
