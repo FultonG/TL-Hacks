@@ -2,9 +2,11 @@ import Card from "../Components/Card";
 import Container from "../Components/Container";
 import { Title, Text } from "../Components/Text";
 import Team from "../svg/TL.svg";
-import What from "../svg/what.png";
-import Who from "../svg/who.png";
-import Why from "../svg/why.png";
+import Contract from "../svg/contract.svg"
+import Trophy from "../svg/trophy.svg"
+import Graph from "../svg/Graph.svg"
+
+
 
 const Home = () => {
   return (
@@ -15,8 +17,8 @@ const Home = () => {
         direction="column"
         height="60%"
       >
-        <Title>Esports Training Camp XD</Title>
-        <Text>Train and Prepare Like a Olympian ???</Text>
+        <Title size="200px">E-volve</Title>
+        <Text size="40px">Train like the pros, become the pro.</Text>
       </Container>
       <Container justify="space-evenly" align="center" height="35%">
         <Container
@@ -27,13 +29,13 @@ const Home = () => {
         >
           <Card
             height="80%"
+            width="70%"
             margin="10px"
-            radius="25px"
-            hover
-            cursor="pointer"
-            background={`url(${Who})  no-repeat`}
+            radius="25px" 
+            background={`url(${Graph})  no-repeat`}
+            shadow = "0 0 0 rgba(0,0,0,0)"
           ></Card>
-          <Text>Who</Text>
+          <Text>Hi! We're a group of people who want to raise your league performance to its pinnacle height.</Text>
         </Container>
         <Container
           width="30%"
@@ -43,13 +45,16 @@ const Home = () => {
         >
           <Card
             height="80%"
-            margin="10px"
+            width="50%"
+            margin="20px"
             radius="25px"
-            background={`url(${What}) no-repeat`}
-            hover
-            cursor="pointer"
-          ></Card>
-          <Text>What</Text>
+            background={`url(${Trophy}) no-repeat`}
+            shadow = "0 0 0 rgba(0,0,0,0)"
+          >
+          </Card>
+          <Text>We have a three-fold approach:
+Bring in metrics from gameplay, your lifestyle, and your mental state to help you achieve your goals and get ready for the big day.
+</Text>
         </Container>
         <Container
           width="30%"
@@ -59,13 +64,13 @@ const Home = () => {
         >
           <Card
             height="80%"
-            margin="10px"
+            width="70%"
+            margin="25px"
             radius="25px"
-            hover
-            cursor="pointer"
-            background={`url(${Why}) no-repeat`}
+            background={`url(${Team}) no-repeat`}
+            shadow = "0 0 0 rgba(0,0,0,0)"
           ></Card>
-          <Text>Why</Text>
+          <Text>Fight camps have been around for years to help fighters train for their big day. So why don't we apply their philosophy and apply to eSports? We believe our approach will help you achieve your goals faster, healthier and safer!</Text>
         </Container>
       </Container>
     </Container>

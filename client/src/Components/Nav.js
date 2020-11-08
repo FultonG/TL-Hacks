@@ -28,10 +28,9 @@ const Nav = () => {
   let history = useHistory();
   
   return (
-    <Container align="center" height="10%" padding="15px 10px 0px 15px">
+    <Container align="center" height="10%" padding="20px 10px 0px 120px">
       <Brand src={Logo}></Brand>
-      {/*but how gross are those padding percentages LOL */}
-      <Container justify="center" align="center" width="70%">
+      <Container justify="center" align="center" width="100%">
         {NavLinks.map(link => (
           <StyledNavLink to={link.link} exact activeClassName="active">{link.title}</StyledNavLink>
         ))}
