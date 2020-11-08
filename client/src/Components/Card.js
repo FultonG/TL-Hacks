@@ -1,6 +1,26 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-const Card = styled.div(({width = '100%', height = 'auto', minHeight = height, margin = '0px',padding = '0px', lg = width, md = lg, sm = md, xs = sm, cursor, hover, selfCenter, direction = 'row', background = 'white', color = 'black', justify = "center", align = "center", radius="5px"}) => `
+const Card = styled.div(
+  ({
+    width = "45%",
+    height = "auto",
+    minHeight = height,
+    margin = "0px",
+    padding = "0px",
+    lg = width,
+    md = lg,
+    sm = md,
+    xs = sm,
+    cursor,
+    hover,
+    selfCenter,
+    direction = "row",
+    background = "white",
+    color = "black",
+    justify = "center",
+    align = "center",
+    radius = "5px",
+  }) => `
   display: flex;
   flex-direction: ${direction};
   flex-wrap: wrap;
@@ -14,9 +34,9 @@ const Card = styled.div(({width = '100%', height = 'auto', minHeight = height, m
   align-items: ${align};
   justify-content: ${justify};
   background: ${background};
-  background-size: cover;
+  background-size:contain ;
   color: ${color};
-  ${selfCenter && 'margin: 10px auto;'}
+  ${selfCenter && "margin: 10px auto;"}
   @media only screen and (max-width: 1200px){
     width: ${lg}
   }
@@ -31,7 +51,7 @@ const Card = styled.div(({width = '100%', height = 'auto', minHeight = height, m
   }
   &:hover {
     cursor: ${cursor};
-    ${hover && 'box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);'}
+    ${hover && "box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);"}
   }
 `
 );
