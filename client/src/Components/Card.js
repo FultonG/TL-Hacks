@@ -20,6 +20,7 @@ const Card = styled.div(
     justify = "center",
     align = "center",
     radius = "5px",
+    shadow = "0px 1px 4px rgba(0, 0, 0, 0.25)"
   }) => `
   display: flex;
   flex-direction: ${direction};
@@ -29,7 +30,7 @@ const Card = styled.div(
   min-height: ${minHeight};
   margin: ${margin};
   padding: ${padding};
-  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: ${shadow};
   border-radius: ${radius};
   align-items: ${align};
   justify-content: ${justify};

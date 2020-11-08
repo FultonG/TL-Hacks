@@ -45,6 +45,7 @@ const Charts = [
   { id: "28e7377b-614b-4e59-b2ad-242fdc5ab309", ref: createRef() },
   { id: "9483e76a-46da-4f26-b9d4-ba09a1df4b2d", ref: createRef() },
   { id: "1eddd769-220d-4663-a3f0-389c8e1f63ce", ref: createRef() },
+  { id: "f36f7199-6d78-417e-ad28-b39a2a14f857", ref: createRef() },
 ];
 
 export default Metrics;

@@ -6,21 +6,27 @@ export const Bold = styled.p`
   font-size: 20px;
 `;
 
-export const Text = styled.p`
+export const Text = styled.p(({
+  size="24px",
+  space="0px"
+}) =>`
 font-weight: 500;
-font-size: 24px;
+font-size: ${size};
 line-height: 22px;
 color: #FFFFFF;
 margin: 0;
-`;
+letter-spacing: ${space};
+`);
 
-export const Title = styled.h1`
+export const Title = styled.h1(
+  ({
+    size = "80px",}) =>`
   font-family: "Bebas Neue";
-  font-size: 80px;
+  font-size: ${size};
   letter-spacing: 3px;
   color: #FFFFFF;
   margin: 10px;
-`;
+`);
 
 export const Description = styled(Text)`
   font-family: "Bebas Neue";
