@@ -7,6 +7,8 @@ const Input = styled.input`
   width: 100%;
   height: 40px;
   padding: 10px;
+  font-family: 'BebasNeueRegular';
+  font-size: 18px;
 
   &::placeholder {
     color: #AEAEAE;
