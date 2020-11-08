@@ -3,14 +3,14 @@ import { NavLink, useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import Logo from '../svg/TL-Logo.svg';
 import Button from './Button';
-import { useContext, useEffect } from 'react';
-import { useAppReducer, useAppState, UserContext } from '../Context/AppContext';
+import { useAppReducer, useAppState } from '../Context/AppContext';
 import { Text } from './Text';
 const StyledNavLink = styled(NavLink)`
   font-family: 'Open Sans', sans-serif;
   letter-spacing: 2px;
   font-weight:  600;
   color: white;
+  margin-left: 100px;
   text-decoration: none; /* no underline */
   &.active {
     text-decoration: underline;
@@ -31,7 +31,7 @@ const Nav = () => {
     <Container align="center" height="10%" padding="15px 10px 0px 15px">
       <Brand src={Logo}></Brand>
       {/*but how gross are those padding percentages LOL */}
-      <Container justify="space-evenly" align="center" width="70%" padding="0% 8% 0% 30%">
+      <Container justify="center" align="center" width="70%">
         {NavLinks.map(link => (
           <StyledNavLink to={link.link} exact activeClassName="active">{link.title}</StyledNavLink>
         ))}
