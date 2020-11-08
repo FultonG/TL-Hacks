@@ -11,7 +11,7 @@ const summoner = {
         res = await axios.get(`https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${data.summonerName}`, { headers: { 'X-Riot-Token': process.env.RIOT_API_KEY } })
         let {name, ...rest} = res.data;
         res = await axios.get(`https://na1.api.riotgames.com/lol/match/v4/matchlists/by-account/${rest.accountId}`, { headers: { 'X-Riot-Token': process.env.RIOT_API_KEY } });
-        await collection.insertOne({...rest, ...res.data, summonerName: name});
+        await collection.insertOne({...rest, matches: res.data.matches, summonerName: name});
         return { status: 200, data: res.data };
       } else {
       return { status: 200, data: res };
