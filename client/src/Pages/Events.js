@@ -2,46 +2,55 @@ import Card from "../Components/Card";
 import Container from "../Components/Container";
 import { Title, Text } from "../Components/Text";
 import API from "../API/index";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+
 
 const Events = () => {
+    const [tournaments, setTournaments] = useState([]);
+    useEffect(() => {
+        fetchTournamentInfo();
+    }, []);
 
-    // useEffect(() => {
-    //     fetchTournamentInfo();
-    // }, []);
-
-    // const fetchTournamentInfo = async () => {
-    //     try {
-    //         let res = await API.getTournamentInfo();
-    //         console.log(res);
-    //     } catch (e) {
-    //         console.log(e.message);
-    //     }
-    // }
+    const fetchTournamentInfo = async () => {
+        try {
+            let res = await API.getTournamentInfo();
+            setTournaments(res.data.result);
+        } catch (e) {
+            console.log(e.message);
+        }
+    }
 
     return (
-        <>
-            <Container direction="column" height= "10%" width="80%"  align="center" padding="0% 0% 0% 20%">
-                <Title>Tournaments</Title>
-              
+        <Container justify="center" align="center" height="90%" direction="column">
+            <Container height="20%" justify="center">
+            <Title>Tournaments</Title>
             </Container>
-            <Card
-                height="12%"
-                width="50%"
-                direction="row"
-                justify="space-between"
-                align="center"
-                margin="5% auto"
-                padding="2% 4% 2% 4%"
-                background= "#000B1D"
-            >
-                {/* <Text>{icon}</Text>
-                <Text>{name}</Text>
-                <Text>{prizepool}</Text>
-                <Text>{startdate}</Text>
-                <Text>{enddate}</Text> */}
-            </Card>
-        </>
+            <Container direction="column" align="center" overflow>
+            {tournaments.map(tournament => (
+                <Card
+                    width="75%"
+                    height="15%"
+                    direction="row"
+                    align="center"
+                    background="#000B1D"
+                    margin="10px"
+                >
+                    <Container justify="center" align="center" width="40%">
+                        <Text>{tournament.name}</Text>
+                    </Container>
+                    <Container justify="center" align="center" width="20%">
+                        <Text>{tournament.prizepool}</Text>
+                    </Container>
+                    <Container justify="center" align="center" width="20%">
+                        <Text>{tournament.startdate}</Text>
+                    </Container>
+                    <Container justify="center" align="center" width="20%">
+                        <Text>{tournament.enddate}</Text>
+                    </Container>
+                </Card>
+            ))}
+            </Container>
+        </Container>
     )
 };
 
