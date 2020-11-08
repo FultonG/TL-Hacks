@@ -11,7 +11,7 @@ const healthCheck = {
       const client = new language.LanguageServiceClient();
       const document = {
         content: text,
-        type: 'PLAIN_TEXT',
+        type: data.notes,
       };
 
       // Detects the sentiment of the document
