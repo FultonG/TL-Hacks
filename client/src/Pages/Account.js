@@ -61,6 +61,7 @@ const Account = () => {
                 <Text style={{ margin: '0px 10px' }}>{findPosition(match.lane, match.role)}</Text>
               </div>
               <Button onClick={(e) => handleMatchInfo(match.gameId)}>Match Info</Button>
+              <Button onClick={() => history.push(`/healthcheck/${match.gameId}`)}>Health Check</Button>
             </Card>
           ))}
         </Container>
