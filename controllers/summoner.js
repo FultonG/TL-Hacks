@@ -40,7 +40,8 @@ const summoner = {
   getMatchesInfoById: async (data) => {
     try {
       let res = await axios.get(`https://na1.api.riotgames.com/lol/match/v4/matches/${data.id}`, { headers: { 'X-Riot-Token': process.env.RIOT_API_KEY } });
-      return { status: 200, data: res.data };
+      results = {...res.data, participants: mergeParticipantArrays(res.data.participants, res.data.participantIdentities)};
+      return { status: 200, data: results };
     } catch (e) {
       console.log(e)
       return { status: 500, data: e.message };
@@ -55,6 +56,13 @@ function findChampion(obj, key) {
     }
   }
   return key;
+}
+
+function mergeParticipantArrays(participants, participantIdentities){
+  return participants.map(participant => {
+     let identity = participantIdentities.find(identity => participant.participantId == identity.participantId) 
+     return {...participant, participantInfo: identity};    
+  })
 }
 
 module.exports = summoner;
